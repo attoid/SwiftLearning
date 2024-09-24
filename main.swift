@@ -1,31 +1,32 @@
 import Foundation
 
-var continueProgram = true  // Переменная для управления циклом
+//Просто массив
+let array = ["phto1", "photo2", "photo3"]
 
-while continueProgram == true {
-    // Основная логика программы
-    print("Введите ваше имя: ")
-    let name = readLine()  // Читаем имя
+//Массив кортежей
+let assets: [(name: String, amount: Int)] = [
+    (name:"real estate", amount: 50000),
+        (name:"cash", amount: 10000),
+            (name:"shares", amount: 100000),
+                (name:"bonds", amount: 44000)
+]
 
-    // Проверка имени на наличие данных
-    if let validInput = name {  //проверка что строка не пустая с помощью if let
-        print("Привет, \(validInput)")
-    } else {
-        print("Ошибка ввода.")
-    }
+//Просто словарь
+let dictionary: [String: Int] = [
+    "Math": 100,
+    "English": 120,
+    "Russian": 180
+]
 
-    // Спрашиваем, хочет ли пользователь запустить программу снова
-    print("Хотите запустить программу снова? (y/n):")
-    let answer = readLine()
+//Словарь кортежей
+let listMovies: [String: (rate:Int, director:String)] = [
+    "Серьезный человек": (rate: 80, director: "Coen brothers"),
+    "Матрица": (rate: 100, director: "The Wachowskis"),
+    "There Will Be Blood": (rate: 73, "Paul Thomas Anderson")
+]
 
-    if let validAnswer = answer {
-        if validAnswer == "y" {  // Если пользователь вводит 'y', продолжаем
-            continueProgram = true
-        } else if answer == "n" {  // Если пользователь вводит 'n', завершаем программу
-            continueProgram = false
-            print("Программа завершена.")
-        } else {
-            print("Некорректный ответ. Введите 'y' или 'n'.")
-        }
-    }
-}
+//Просто множество
+let mySet: Set<String> = ["Tbilisi", "Batumi", "Kutaisi"]
+
+//Множество кортежей
+//нет поддержки Hashable
